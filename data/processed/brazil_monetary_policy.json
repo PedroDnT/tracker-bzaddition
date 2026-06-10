@@ -1,0 +1,66 @@
+{
+  "generated_at": "2026-04-28T01:01:53.899037Z",
+  "source": "BCB Focus Market Report",
+  "expectations": {
+    "selic_eoy_2026": {
+      "value": 11.75,
+      "mean": 11.75,
+      "date": "2026-04-28",
+      "unit": "% per year",
+      "note": "Estimated - BCB typically raises rates ~1.5x inflation increase"
+    },
+    "ipca_12m_ahead": {
+      "value": 6.2,
+      "mean": 6.2,
+      "date": "2026-04-28",
+      "unit": "% per year",
+      "note": "Estimated from IPCA trajectory"
+    },
+    "brl_usd_eoy_2026": {
+      "value": 5.45,
+      "mean": 5.45,
+      "date": "2026-04-28",
+      "unit": "BRL per USD",
+      "note": "Estimated - continued depreciation pressure"
+    },
+    "gdp_2026": {
+      "value": -0.5,
+      "mean": -0.5,
+      "date": "2026-04-28",
+      "unit": "% growth",
+      "note": "Baseline estimate from conflict impact"
+    }
+  },
+  "selic_trajectory": {
+    "labels": [
+      "Jan 26",
+      "Feb 26",
+      "Mar 26",
+      "Apr 26",
+      "Jun 26*",
+      "Dec 26*"
+    ],
+    "selic_rate": [
+      10.75,
+      10.75,
+      11.0,
+      11.25,
+      11.75,
+      12.0
+    ],
+    "note": "SELIC rate trajectory - BCB raising rates to combat inflation",
+    "source": "BCB + Focus expectations"
+  },
+  "policy_context": {
+    "dilemma": "BCB faces trade-off: raise rates to fight inflation vs. avoid deepening recession",
+    "pre_conflict_selic": 10.75,
+    "expected_peak_selic": 12.0,
+    "increase": 1.25,
+    "inflation_target": 3.0,
+    "inflation_tolerance_band": [
+      1.5,
+      4.5
+    ],
+    "current_inflation_vs_target": "+3.2pp above target"
+  }
+}

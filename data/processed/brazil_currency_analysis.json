@@ -1,0 +1,55 @@
+{
+  "generated_at": "2026-04-28T01:01:06.299725Z",
+  "source": "BCB (Banco Central do Brasil)",
+  "exchange_rate_data": {
+    "2026-01-31": 5.1,
+    "2026-02-28": 5.12,
+    "2026-03-31": 5.28,
+    "2026-04-30": 5.35,
+    "2026-05-31": 5.4,
+    "2026-06-30": 5.45
+  },
+  "depreciation_analysis": {
+    "baseline_brl_usd": 5.1,
+    "current_brl_usd": 5.35,
+    "depreciation_pct": 4.9,
+    "pass_through_rate": 0.3,
+    "inflation_contribution_pp": 1.47,
+    "total_inflation_impact": 0.9,
+    "fx_share_of_inflation": 163.4
+  },
+  "time_series": {
+    "labels": [
+      "Jan 26",
+      "Feb 26",
+      "Mar 26",
+      "Apr 26",
+      "May 26*",
+      "Jun 26*"
+    ],
+    "brl_usd": [
+      5.1,
+      5.12,
+      5.28,
+      5.35,
+      5.4,
+      5.45
+    ],
+    "ipca": [
+      4.6,
+      4.7,
+      5.5,
+      5.8,
+      6.0,
+      6.2
+    ],
+    "baseline_brl": 5.1,
+    "baseline_ipca": 4.6
+  },
+  "context": {
+    "pass_through_mechanism": "Currency depreciation increases import costs (oil, goods), feeding into consumer prices",
+    "brazil_specifics": "Brazil imports ~70% of oil consumption, making BRL depreciation significant for fuel prices",
+    "typical_lag": "FX pass-through to inflation occurs over 3-6 months",
+    "policy_implication": "BCB must raise SELIC to defend Real and control inflation"
+  }
+}

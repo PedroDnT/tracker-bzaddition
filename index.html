@@ -186,6 +186,8 @@ tr:hover td{background:var(--bg-card-hover)}
   <div class="nav-tabs" id="navTabs">
     <button class="nav-tab active" data-tab="dashboard">Dashboard</button>
     <button class="nav-tab" data-tab="countries">Country Impact</button>
+    <button class="nav-tab" data-tab="brics">BRICS Analysis</button>
+    <button class="nav-tab" data-tab="brazil">Brazil Deep Dive</button>
     <button class="nav-tab" data-tab="channels">Impact Channels</button>
     <button class="nav-tab" data-tab="methodology">Methodology &amp; Critique</button>
     <button class="nav-tab" data-tab="media">Media Kit</button>
@@ -277,6 +279,260 @@ tr:hover td{background:var(--bg-card-hover)}
   </div>
   <!-- Mobile cards (shown instead of table on small screens) -->
   <div class="country-cards" id="countryCards"></div>
+</div>
+
+<!-- ========== BRICS ANALYSIS TAB ========== -->
+<div class="section" id="tab-brics">
+  <div class="section-hdr">
+    <div>
+      <div class="section-title">BRICS Economies Comparison</div>
+      <div class="section-sub">Brazil, Russia, India, China, South Africa — comparative impact analysis</div>
+    </div>
+  </div>
+
+  <!-- BRICS KPI Cards -->
+  <div class="ch-grid" style="margin-bottom:24px">
+    <div class="ch-card">
+      <div class="ch-icon" style="background:var(--red-dim);color:var(--red)">🇧🇷</div>
+      <h3>Brazil</h3>
+      <p>Low oil dependency (28%). Moderate inflation (+0.9pp). Real depreciation affecting import costs. Unique ethanol buffer reduces fuel price impact.</p>
+      <div class="ch-metric">
+        <span class="ch-metric-lbl">Inflation Impact</span>
+        <span class="ch-metric-val" style="color:var(--yellow)">+0.9pp</span>
+      </div>
+    </div>
+    <div class="ch-card">
+      <div class="ch-icon" style="background:var(--blue-dim);color:var(--blue)">🇷🇺</div>
+      <h3>Russia</h3>
+      <p>Oil exporter (18% dependency for imports). Benefits from high prices but faces sanctions. Ruble volatility high. Low consumer impact.</p>
+      <div class="ch-metric">
+        <span class="ch-metric-lbl">Inflation Impact</span>
+        <span class="ch-metric-val" style="color:var(--green)">+0.6pp</span>
+      </div>
+    </div>
+    <div class="ch-card">
+      <div class="ch-icon" style="background:var(--orange-dim);color:var(--orange)">🇮🇳</div>
+      <h3>India</h3>
+      <p>Highest vulnerability (85% oil dependency). Rupee under pressure. Food + fuel inflation hitting households hard. Political pressure on government.</p>
+      <div class="ch-metric">
+        <span class="ch-metric-lbl">Inflation Impact</span>
+        <span class="ch-metric-val" style="color:var(--red)">+2.1pp</span>
+      </div>
+    </div>
+    <div class="ch-card">
+      <div class="ch-icon" style="background:var(--green-dim);color:var(--green)">🇨🇳</div>
+      <h3>China</h3>
+      <p>High dependency (73%) but large reserves and price controls. Yuan relatively stable. Strategic petroleum reserve cushion.</p>
+      <div class="ch-metric">
+        <span class="ch-metric-lbl">Inflation Impact</span>
+        <span class="ch-metric-val" style="color:var(--yellow)">+1.4pp</span>
+      </div>
+    </div>
+    <div class="ch-card">
+      <div class="ch-icon" style="background:var(--purple-dim);color:var(--purple)">🇿🇦</div>
+      <h3>South Africa</h3>
+      <p>Moderate dependency (68%). Rand depreciation severe (-7%). Energy poverty risk for low-income households. Load-shedding complicates picture.</p>
+      <div class="ch-metric">
+        <span class="ch-metric-lbl">Inflation Impact</span>
+        <span class="ch-metric-val" style="color:var(--orange)">+2.0pp</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- BRICS Comparison Chart -->
+  <div class="card">
+    <div class="card-title">BRICS Multi-Dimensional Impact</div>
+    <div class="card-sub">Radar chart comparing BRICS economies across key vulnerability metrics</div>
+    <div class="chart-wrap chart-wrap-sm"><canvas id="bricsRadarChart"></canvas></div>
+  </div>
+
+  <!-- BRICS Comparison Table -->
+  <div style="margin-top:20px">
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Country</th>
+            <th>Oil Dependency</th>
+            <th>Inflation Impact</th>
+            <th>GDP Hit</th>
+            <th>Currency Change</th>
+            <th>Household Cost/yr</th>
+            <th>Severity</th>
+          </tr>
+        </thead>
+        <tbody id="bricsTableBody">
+          <!-- Populated by JavaScript -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:20px">
+    <div class="card-title">Key Insights: BRICS Divergence</div>
+    <div class="card-sub">Despite being grouped as emerging markets, BRICS countries face vastly different impacts</div>
+    <ul style="font-size:14px;color:var(--text-secondary);line-height:1.8;list-style-position:inside">
+      <li><strong style="color:var(--text-primary)">India & South Africa</strong> are most vulnerable — high oil dependency, weak currencies, large household impact</li>
+      <li><strong style="color:var(--text-primary)">Russia</strong> benefits from being an oil exporter — actually sees economic upside despite sanctions</li>
+      <li><strong style="color:var(--text-primary)">China</strong> manages impact through reserves and price controls — state capacity matters</li>
+      <li><strong style="color:var(--text-primary)">Brazil</strong> has unique buffers (ethanol, lower dependency) — but currency weakness transmits inflation</li>
+      <li><strong style="color:var(--text-primary)">Policy responses diverge</strong>: India/Brazil raise rates (fighting inflation), China holds steady (prioritizing growth)</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ========== BRAZIL DEEP DIVE TAB ========== -->
+<div class="section" id="tab-brazil">
+  <div class="section-hdr">
+    <div>
+      <div class="section-title">🇧🇷 Brazil: Deep Dive Analysis</div>
+      <div class="section-sub">Detailed analysis of conflict impact on Latin America's largest economy</div>
+    </div>
+  </div>
+
+  <!-- Brazil KPIs -->
+  <div class="kpi-grid" style="margin-bottom:24px">
+    <div class="kpi">
+      <div class="kpi-label">IPCA Inflation</div>
+      <div class="kpi-val" style="color:var(--yellow)">6.2%</div>
+      <div class="kpi-chg">+1.6pp since Jan</div>
+      <div class="kpi-src">BCB (Jun forecast)</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">BRL/USD</div>
+      <div class="kpi-val" style="color:var(--red)">R$5.35</div>
+      <div class="kpi-chg">-4.9% depreciation</div>
+      <div class="kpi-src">BCB (Apr)</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">SELIC Rate</div>
+      <div class="kpi-val" style="color:var(--blue)">11.25%</div>
+      <div class="kpi-chg">+0.5pp since Mar</div>
+      <div class="kpi-src">BCB decision</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Household Cost</div>
+      <div class="kpi-val" style="color:var(--orange)">$586/yr</div>
+      <div class="kpi-chg">Extra annual burden</div>
+      <div class="kpi-src">IMF model</div>
+    </div>
+  </div>
+
+  <!-- Real Depreciation vs Inflation -->
+  <div class="card">
+    <div class="card-title">Currency Depreciation → Inflation Transmission</div>
+    <div class="card-sub">How Real weakness feeds into consumer prices (30% pass-through rate)</div>
+    <div class="chart-wrap"><canvas id="brazilCurrencyInflChart"></canvas></div>
+  </div>
+
+  <div class="card" style="margin-top:20px">
+    <div class="card-title">Depreciation Impact Analysis</div>
+    <div class="card-sub">BRL depreciation contributes significantly to Brazil's inflation pressure</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px">
+      <div style="background:var(--bg-secondary);padding:16px;border-radius:8px">
+        <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;margin-bottom:8px">BRL Depreciation</div>
+        <div class="mono" style="font-size:24px;font-weight:700;color:var(--red)">-4.9%</div>
+        <div style="font-size:12px;color:var(--text-secondary);margin-top:4px">vs. pre-conflict</div>
+      </div>
+      <div style="background:var(--bg-secondary);padding:16px;border-radius:8px">
+        <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;margin-bottom:8px">Pass-Through Rate</div>
+        <div class="mono" style="font-size:24px;font-weight:700;color:var(--yellow)">30%</div>
+        <div style="font-size:12px;color:var(--text-secondary);margin-top:4px">FX → CPI transmission</div>
+      </div>
+      <div style="background:var(--bg-secondary);padding:16px;border-radius:8px">
+        <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;margin-bottom:8px">Inflation from FX</div>
+        <div class="mono" style="font-size:24px;font-weight:700;color:var(--orange)">+1.47pp</div>
+        <div style="font-size:12px;color:var(--text-secondary);margin-top:4px">Currency contribution</div>
+      </div>
+      <div style="background:var(--bg-secondary);padding:16px;border-radius:8px">
+        <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;margin-bottom:8px">Mechanism</div>
+        <div style="font-size:13px;font-weight:600;color:var(--text-primary);margin-top:8px">Import Costs ↑</div>
+        <div style="font-size:12px;color:var(--text-secondary);margin-top:4px">Oil, goods pricier</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BCB Monetary Policy Response -->
+  <div class="card" style="margin-top:20px">
+    <div class="card-title">Central Bank Monetary Policy Response</div>
+    <div class="card-sub">SELIC rate trajectory and BCB's policy dilemma</div>
+    <div class="chart-wrap chart-wrap-sm"><canvas id="brazilSelicChart"></canvas></div>
+  </div>
+
+  <div class="card" style="margin-top:20px">
+    <div class="card-title">BCB Policy Dilemma</div>
+    <div class="card-sub">Fighting inflation vs. avoiding recession — the central banker's nightmare</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+      <div>
+        <h4 style="font-size:14px;font-weight:600;margin-bottom:12px;color:var(--red)">🔺 Raise Rates (Current Path)</h4>
+        <ul style="font-size:13px;color:var(--text-secondary);line-height:1.8;list-style-position:inside">
+          <li>✓ Combat 6.2% inflation (above 4.5% ceiling)</li>
+          <li>✓ Defend Real from further depreciation</li>
+          <li>✓ Maintain credibility with markets</li>
+          <li>✗ Slow GDP growth (already weak -0.5%)</li>
+          <li>✗ Increase borrowing costs for consumers/firms</li>
+          <li>✗ Risk triggering recession</li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="font-size:14px;font-weight:600;margin-bottom:12px;color:var(--blue)">🔻 Hold/Cut Rates (Alternative)</h4>
+        <ul style="font-size:13px;color:var(--text-secondary);line-height:1.8;list-style-position:inside">
+          <li>✓ Support economic growth</li>
+          <li>✓ Reduce household debt burden</li>
+          <li>✓ Boost consumer spending</li>
+          <li>✗ Inflation spirals higher (wage-price loop)</li>
+          <li>✗ Real depreciates further (capital flight)</li>
+          <li>✗ Loss of BCB credibility</li>
+        </ul>
+      </div>
+    </div>
+    <div style="margin-top:16px;padding:12px;background:var(--bg-secondary);border-radius:8px;border-left:3px solid var(--yellow)">
+      <strong style="color:var(--text-primary)">BCB Decision:</strong>
+      <span style="color:var(--text-secondary);font-size:13px;margin-left:8px">
+        Prioritizing inflation control — SELIC raised from 10.75% to 11.25% in April, with further hikes expected to 12% by year-end.
+        Focus Market consensus expects inflation to remain above target through 2026.
+      </span>
+    </div>
+  </div>
+
+  <!-- Focus Expectations -->
+  <div class="card" style="margin-top:20px">
+    <div class="card-title">Market Expectations (BCB Focus)</div>
+    <div class="card-sub">Weekly survey of economists' forecasts — market consensus on Brazil's economic trajectory</div>
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr><th>Indicator</th><th>Current</th><th>EOY 2026 Forecast</th><th>Change</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="font-weight:500">SELIC Rate</td>
+            <td class="mono">11.25%</td>
+            <td class="mono" style="font-weight:600">11.75%</td>
+            <td class="mono" style="color:var(--red)">+0.50pp</td>
+          </tr>
+          <tr>
+            <td style="font-weight:500">IPCA (12m)</td>
+            <td class="mono">5.8%</td>
+            <td class="mono" style="font-weight:600">6.2%</td>
+            <td class="mono" style="color:var(--red)">+0.4pp</td>
+          </tr>
+          <tr>
+            <td style="font-weight:500">BRL/USD</td>
+            <td class="mono">5.35</td>
+            <td class="mono" style="font-weight:600">5.45</td>
+            <td class="mono" style="color:var(--red)">-1.9%</td>
+          </tr>
+          <tr>
+            <td style="font-weight:500">GDP Growth</td>
+            <td class="mono">—</td>
+            <td class="mono" style="font-weight:600">-0.5%</td>
+            <td class="mono" style="color:var(--red)">Contraction</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
 
 <!-- ========== IMPACT CHANNELS TAB ========== -->
@@ -518,6 +774,7 @@ const inflationData = {
   eu:[2.6,2.7,3.8,4.2,4.5,4.7],
   india:[4.8,4.9,6.2,7.0,7.5,7.8],
   china:[0.8,0.7,1.8,2.3,2.7,3.0],
+  brazil:[4.6,4.7,5.5,5.8,6.0,6.2],
   global:[3.2,3.2,4.0,4.5,4.8,5.0],
 };
 
@@ -824,6 +1081,7 @@ new Chart(document.getElementById('inflChart'), {
       { label: 'EU', data: inflationData.eu, borderColor: '#9b5de5', borderWidth: 2, pointRadius: 3, tension: 0.3, fill: false },
       { label: 'India', data: inflationData.india, borderColor: '#ff8c42', borderWidth: 2, pointRadius: 3, tension: 0.3, fill: false },
       { label: 'China', data: inflationData.china, borderColor: '#06d6a0', borderWidth: 2, pointRadius: 3, tension: 0.3, fill: false },
+      { label: 'Brazil', data: inflationData.brazil, borderColor: '#ffd166', borderWidth: 2, pointRadius: 3, tension: 0.3, fill: false },
     ]
   },
   options: {
@@ -869,6 +1127,197 @@ new Chart(document.getElementById('hhChart'), {
     scales: {
       x: { ticks: { callback: function(v) { return '$' + v.toLocaleString(); } }, grid: { color: '#1e1e35' } },
       y: { grid: { display: false }, ticks: { font: { size: 12 } } }
+    }
+  }
+});
+
+// ─── BRICS COMPARISON CHARTS ──────────────────────────────────────
+// Filter BRICS countries
+var bricsCountries = countryData.filter(function(c) {
+  return ['Brazil', 'Russia', 'India', 'China', 'South Africa'].indexOf(c.country) !== -1;
+});
+
+// BRICS Radar Chart
+new Chart(document.getElementById('bricsRadarChart'), {
+  type: 'radar',
+  data: {
+    labels: ['Oil Dependency', 'Inflation Impact', 'GDP Hit (abs)', 'Currency Impact (abs)', 'Household Cost'],
+    datasets: bricsCountries.map(function(c, idx) {
+      var colors = ['#ffd166', '#4ea8de', '#ff8c42', '#06d6a0', '#9b5de5'];
+      return {
+        label: c.country,
+        data: [
+          c.oilDep,
+          c.inflImpact * 10,  // Scale for visibility
+          Math.abs(c.gdpHit) * 10,
+          Math.abs(c.currencyChg) * 3,
+          c.householdCost / 100
+        ],
+        borderColor: colors[idx],
+        backgroundColor: colors[idx] + '30',
+        borderWidth: 2,
+        pointRadius: 3
+      };
+    })
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      tooltip: { backgroundColor: '#1a1a2e', borderColor: '#2a2a4a', borderWidth: 1 },
+      legend: { labels: { usePointStyle: true, padding: 16, font: { size: 12 } } }
+    },
+    scales: {
+      r: {
+        beginAtZero: true,
+        ticks: { display: false },
+        grid: { color: '#1e1e35' },
+        pointLabels: { color: '#8888aa', font: { size: 11 } }
+      }
+    }
+  }
+});
+
+// BRICS Table
+function renderBricsTable() {
+  var html = '';
+  bricsCountries.forEach(function(c) {
+    var sevClass = 'sev sev-' + c.severity;
+    var curColor = c.currencyChg > 0 ? 'var(--green)' : 'var(--red)';
+    var gdpColor = c.gdpHit > 0 ? 'var(--green)' : 'var(--red)';
+    html += '<tr>' +
+      '<td><span class="flag">' + c.flag + '</span><strong>' + c.country + '</strong></td>' +
+      '<td class="mono">' + c.oilDep + '%</td>' +
+      '<td class="mono" style="color:var(--red)">+' + c.inflImpact.toFixed(1) + 'pp</td>' +
+      '<td class="mono" style="color:' + gdpColor + '">' + (c.gdpHit > 0 ? '+' : '') + c.gdpHit.toFixed(1) + '%</td>' +
+      '<td class="mono" style="color:' + curColor + '">' + (c.currencyChg > 0 ? '+' : '') + c.currencyChg.toFixed(1) + '%</td>' +
+      '<td class="mono">$' + c.householdCost.toLocaleString() + '</td>' +
+      '<td><span class="' + sevClass + '">' + c.severity + '</span></td>' +
+      '</tr>';
+  });
+  document.getElementById('bricsTableBody').innerHTML = html;
+}
+renderBricsTable();
+
+// ─── BRAZIL DEEP DIVE CHARTS ──────────────────────────────────────
+// Brazil Currency vs Inflation Chart
+new Chart(document.getElementById('brazilCurrencyInflChart'), {
+  type: 'line',
+  data: {
+    labels: ['Jan 26', 'Feb 26', 'Mar 26', 'Apr 26', 'May 26*', 'Jun 26*'],
+    datasets: [
+      {
+        label: 'BRL/USD Exchange Rate',
+        data: [5.10, 5.12, 5.28, 5.35, 5.40, 5.45],
+        borderColor: '#ff4757',
+        backgroundColor: 'rgba(255,71,87,0.1)',
+        yAxisID: 'y-fx',
+        borderWidth: 3,
+        pointRadius: 4,
+        tension: 0.3
+      },
+      {
+        label: 'IPCA Inflation (%)',
+        data: [4.6, 4.7, 5.5, 5.8, 6.0, 6.2],
+        borderColor: '#ffd166',
+        backgroundColor: 'rgba(255,209,102,0.1)',
+        yAxisID: 'y-infl',
+        borderWidth: 3,
+        pointRadius: 4,
+        tension: 0.3
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    interaction: { mode: 'index', intersect: false },
+    plugins: {
+      tooltip: { backgroundColor: '#1a1a2e', borderColor: '#2a2a4a', borderWidth: 1 },
+      legend: { labels: { usePointStyle: true, padding: 16 } }
+    },
+    scales: {
+      'y-fx': {
+        type: 'linear',
+        position: 'left',
+        ticks: { callback: function(v) { return 'R$' + v.toFixed(2); }, color: '#ff4757' },
+        grid: { color: '#1e1e35' },
+        title: { display: true, text: 'BRL/USD', color: '#ff4757', font: { weight: '600' } }
+      },
+      'y-infl': {
+        type: 'linear',
+        position: 'right',
+        ticks: { callback: function(v) { return v.toFixed(1) + '%'; }, color: '#ffd166' },
+        grid: { display: false },
+        title: { display: true, text: 'IPCA (%)', color: '#ffd166', font: { weight: '600' } }
+      },
+      x: { grid: { color: '#1e1e35' } }
+    }
+  }
+});
+
+// Brazil SELIC Rate Chart
+new Chart(document.getElementById('brazilSelicChart'), {
+  type: 'line',
+  data: {
+    labels: ['Jan 26', 'Feb 26', 'Mar 26', 'Apr 26', 'Jun 26*', 'Dec 26*'],
+    datasets: [
+      {
+        label: 'SELIC Rate',
+        data: [10.75, 10.75, 11.00, 11.25, 11.75, 12.00],
+        borderColor: '#4ea8de',
+        backgroundColor: 'rgba(78,168,222,0.15)',
+        fill: true,
+        borderWidth: 3,
+        pointRadius: 5,
+        pointBackgroundColor: '#4ea8de',
+        tension: 0.2
+      },
+      {
+        label: 'Inflation Target (3.0%)',
+        data: [3.0, 3.0, 3.0, 3.0, 3.0, 3.0],
+        borderColor: '#06d6a0',
+        borderWidth: 2,
+        borderDash: [8, 4],
+        pointRadius: 0,
+        fill: false
+      },
+      {
+        label: 'Tolerance Ceiling (4.5%)',
+        data: [4.5, 4.5, 4.5, 4.5, 4.5, 4.5],
+        borderColor: '#ff8c42',
+        borderWidth: 2,
+        borderDash: [8, 4],
+        pointRadius: 0,
+        fill: false
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    interaction: { mode: 'index', intersect: false },
+    plugins: {
+      tooltip: {
+        backgroundColor: '#1a1a2e',
+        borderColor: '#2a2a4a',
+        borderWidth: 1,
+        callbacks: {
+          label: function(ctx) {
+            return ctx.dataset.label + ': ' + ctx.parsed.y.toFixed(2) + '%';
+          }
+        }
+      },
+      legend: { labels: { usePointStyle: true, padding: 12, font: { size: 11 } } }
+    },
+    scales: {
+      y: {
+        min: 2,
+        max: 13,
+        ticks: { callback: function(v) { return v + '%'; } },
+        grid: { color: '#1e1e35' }
+      },
+      x: { grid: { color: '#1e1e35' } }
     }
   }
 });
